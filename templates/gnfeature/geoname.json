@@ -1,0 +1,78 @@
+{
+  "templates": [
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "gn:Feature",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.geonames.org/ontology#Feature"
+      },
+      "label": {
+        "en": "Country"
+      },
+      "items": [
+        {
+          "id": "cn_name"
+        },
+        {
+          "id": "cn_officialname"
+        },
+        {
+          "id": "cn_alternateName"
+        },
+        {
+          "id": "cn_featureclass"
+        },
+        {
+          "id": "cn_featurecode"
+        },
+        {
+          "id": "cn_countrycode"
+        },
+        {
+          "id": "cn_population"
+        },
+        {
+          "id": "cn_parentfeature"
+        },
+        {
+          "id": "cn_locationmap"
+        },
+        {
+          "id": "cn_wikipediaartictle"
+        },
+        {
+          "id": "rdfs:seeAlso"
+        },
+        {
+          "id": "wd:p297",
+          "type":"text",
+          "label":{"en":"Country code (2 letters)"},
+          "nodetype":"LITERAL",
+          "property":"http://www.wikidata.org/prop/direct/P297",
+          "description":{"en":"Identifier for a country in two-letter format per ISO 3166-1"},
+          "cardinality": {"min": 1, "pref": 1, "max": 1}
+        },
+        {
+          "id": "wd:p298",
+          "type":"text",
+          "label":{"en":"Country code (3 letters)"},
+          "nodetype":"LITERAL",
+          "property":"http://www.wikidata.org/prop/direct/P298",
+          "description":{"en":"Identifier for a country in three-letter format per ISO 3166-1"},
+          "cardinality": {"min": 1, "pref": 1, "max": 1}
+        },
+        {
+          "id": "wd:p299",
+          "type":"text",
+          "label":{"en":"Country code (numeric)"},
+          "pattern": "\\d\\d\\d",
+          "nodetype":"LITERAL",
+          "property":"http://www.wikidata.org/prop/direct/P299",
+          "description":{"en":"Identifier for a country in numeric format per ISO 3166-1"},
+          "cardinality": {"min": 1, "pref": 1, "max": 1}
+        }
+      ]
+    }
+  ]
+}

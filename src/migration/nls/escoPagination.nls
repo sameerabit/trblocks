@@ -1,7 +1,0 @@
-{
-  "root": {
-    "paginationText": "${fromCount} - ${toCount} of ${totalCount}"
-  },
-  "sv": true,
-  "de": true
-}

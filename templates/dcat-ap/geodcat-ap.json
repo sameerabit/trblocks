@@ -1,0 +1,114 @@
+{
+  "templates": [
+    {
+      "type": "group",
+      "id": "dcat:GeoDataset",
+      "label": {
+        "en": "Dataset",
+        "sv": "Dataset",
+        "de": "Datensatz"
+      },
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/ns/dcat#Dataset"
+      },
+      "items": [
+        "dcat:dcterms:title_da",
+        "dcat:dcterms:description_da",
+        "dcat:foaf:Agent_da",
+        "geodcat:dcterms:creator",
+        "geodcat:prov:qualifiedAttribution",
+        "adms:contactPoint-choice_da",
+        "dcat:contactPoint-choice_da",
+        "dcat:keyword_da",
+        "dcat:theme-da",
+        "geodcat:dcterms:subject",
+        "geodcat:dcterms:type",
+        "geodcat:spatial:dcterms:type",
+        "dcat:dcterms:identifier_da",
+        "dcat:adms:identifier_da",
+        "geodcat:dcterms:created",
+        "dcat:dcterms:issued_da",
+        "dcat:dcterms:modified_da",
+        "geodcat:dcterms:created",
+        "dcat:dcterms:language_da",
+        "dcat:landingPage_da",
+        "dcat:dcterms:conformsTo_da",
+        "geodcat:dcterms:conformsTo",
+        "dcat:dcterms:spatial_da",
+        "dcat:dcterms:spatial_bb_da",
+        "geodcat:rdfs:comment",
+        "dcat:dcterms:temporal_da",
+        "dcat:dcterms:accrualPeriodicity-cld_da",
+        "dcat:dcterms:accrualPeriodicity_da",
+        "dcat:adms:version",
+        "dcat:owl:versionInfo_da",
+        "dcat:adms:versionNotes_da",
+        "dcat:dcterms:source_da",
+        "dcat:dcterms:accessRights_da",
+        "dcat:hasVersion_da",
+        "dcat:isVersionOf_da",
+        "dcat:dcterms:relation_da",
+        "dcat:foaf:page_da",
+        "dcat:dcterms:provenance_da",
+        "geodcat:conformity"
+      ]
+    },
+    {
+      "type": "group",
+      "id": "dcat:GeoDistribution",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/ns/dcat#Distribution"
+      },
+      "label": {},
+      "items": [
+        "dcat:dcterms:title_di",
+        "dcat:dcterms:description_di",
+        "dcat:accessURL_di",
+        "dcat:downloadURL_di",
+        "dcat:format-group_di",
+        "dcat:byteSize_di",
+        "dcat:dcterms:language_di",
+        "dcat:dcterms:issued_di",
+        "dcat:dcterms:modified_di",
+        "dcat:adms:status_di",
+        "dcat:dcterms:license_di",
+        "dcat:odrs:RSSA_di",
+        "dcat:spdx:checksum_di",
+        "dcat:foaf:page_di",
+        "dcat:dcterms:conformsTo_di",
+        "geodcat:adms:representationTechnique",
+        "geodcat:cnt:characterEncoding"
+      ],
+      "cardinality": {
+        "min": 0,
+        "pref": 0
+      },
+      "description": {},
+      "nodetype": "URI"
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "dcat:GeoCatalog",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/ns/dcat#Catalog"
+      },
+      "items": [
+        "dcat:dcterms:title_ca",
+        "dcat:dcterms:description_ca",
+        "dcat:foaf:Agent_ca",
+        "dcat:dcterms:issued_ca",
+        "dcat:dcterms:language_ca",
+        "dcat:dcterms:modified_ca",
+        "dcat:foaf:homepage_ca",
+        "dcat:dcterms:spatial_ca",
+        "dcat:dcterms:license_ca",
+        "dcat:odrs:RSSA_ca",
+        "dcat:dcterms:hasPart_ca",
+        "dcat:dcterms:isPartOf_ca",
+        "dcat:themeTaxonomy_ca_deprecated",
+        "dcat:themeTaxonomy_ca"
+      ]
+    }
+  ]
+}

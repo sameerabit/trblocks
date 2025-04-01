@@ -1,0 +1,355 @@
+{
+  "namespaces": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "cnt": "http://www.w3.org/2011/content#"
+  },
+  "templates": [
+    {
+      "type": "text",
+      "nodetype": "DATATYPE_LITERAL",
+      "datatype": "xsd:date",
+      "id": "geodcat:dcterms:created",
+      "property": "http://purl.org/dc/terms/created",
+      "label": {
+        "en": "Date of creation",
+        "sv": "Skapningsdatum",
+        "de": "Erstelldatum"
+      },
+      "cardinality": {
+        "min": 0,
+        "pref": 1,
+        "max": 1
+      }
+    },
+    {
+      "type": "text",
+      "nodetype": "LANGUAGE_LITERAL",
+      "id": "geodcat:rdfs:comment",
+      "property": "rdfs:comment",
+      "label": {
+        "en": "Spatial resolution",
+        "sv": "Rumslig upplösning",
+        "de": "Räumliche Auflösung"
+      },
+      "styles": [
+        "multiline"
+      ]
+    },
+    {
+      "type": "choice",
+      "nodetype": "URI",
+      "id": "geodcat:dcterms:creator",
+      "property": "dcterms:creator",
+      "label": {
+        "en": "Creator",
+        "sv": "Skapare",
+        "de": "Ersteller"
+      },
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+          "http://xmlns.com/foaf/0.1/Agent",
+          "http://xmlns.com/foaf/0.1/Person",
+          "http://xmlns.com/foaf/0.1/Organization"
+        ]
+      }
+    },
+    {
+      "type": "choice",
+      "nodetype": "RESOURCE",
+      "id": "geodcat:prov:agent",
+      "labelProperties": [
+        "http://www.w3.org/2006/vcard/ns#fn"
+      ],
+      "property": "prov:agent",
+      "label": {
+        "en": "Party",
+        "sv": "Part",
+        "de": "Zuständige Stelle"
+      },
+      "cardinality": {
+        "pref": 1
+      },
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+          "http://www.w3.org/2006/vcard/ns#Organization",
+          "http://www.w3.org/2006/vcard/ns#Individual",
+          "http://www.w3.org/2006/vcard/ns#Kind"
+        ]
+      }
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "geodcat:prov:qualifiedAttribution",
+      "property": "prov:qualifiedAttribution",
+      "label": {
+        "en": "Responsible party",
+        "sv": "Ansvarig part",
+        "de": "Verantwortliche Partei"
+      },
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+          "prov:Attribution"
+        ]
+      },
+      "items": [
+        "geodcat:dcterms:type-responsiblepartyrole",
+        "geodcat:prov:agent"
+      ]
+    },
+    {
+      "type": "group",
+      "nodetype": "BLANK",
+      "id": "geodcat:dcterms:conformsTo",
+      "property": "dcterms:conformsTo",
+      "constraints": {
+        "dcterms:type": "http://inspire.ec.europa.eu/glossary/SpatialReferenceSystem"
+      },
+      "items": [
+        {
+          "type": "text",
+          "nodetype": "ONLY_LITERAL",
+          "property": "dcterms:identifier",
+          "valueTemplate": "EPSG:",
+          "pattern": "\\d*",
+          "label": {
+            "en": "Spatial reference system",
+            "sv": "Rumsligt referenssystem",
+            "de": "Räumliches Bezugssystem"
+          }
+        }
+      ],
+      "styles": ["invisibleGroup"]
+    },
+    {
+      "type": "choice",
+      "nodetype": "URI",
+      "id": "geodcat:adms:representationTechnique",
+      "property": "adms:representationTechnique",
+      "label": {
+        "en": "Spatial representation type",
+        "sv": "Typ av rumslig representation",
+        "de": "Art der räumlichen Darstellung"
+      },
+      "choices": [
+        {
+          "label": {
+            "en": "Vector",
+            "sv": "Vektor",
+            "de": "Vektor"
+          },
+          "description": {
+            "en": "Vector data is used to represent geographic data"
+          },
+          "value": "http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationTypeCode/vector"
+        },
+        {
+          "label": {
+            "en": "Grid",
+            "sv": "Rutnät",
+            "de": "Raster"
+          },
+          "description": {
+            "en": "Grid data is used to represent geographic data."
+          },
+          "value": "http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationTypeCode/grid"
+        },
+        {
+          "label": {
+            "en": "Text table",
+            "sv": "Texttabell",
+            "de": "Texttabelle"
+          },
+          "description": {
+            "en": "Textual or tabular data is used to represent geographic data."
+          },
+          "value": "http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationTypeCode/textTable"
+        },
+        {
+          "label": {
+            "en": "Triangulated",
+            "sv": "Triangulerad",
+            "de": "Trianguliert"
+          },
+          "description": {
+            "en": "Triangulated irregular network."
+          },
+          "value": "http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationTypeCode/tin"
+        },
+        {
+          "label": {
+            "en": "Stereo model",
+            "sv": "Stereomodell",
+            "de": "Stereo-Modell"
+          },
+          "description": {
+            "en": "Three-dimensional view formed by the intersecting homologous rays of an overlapping pair of images."
+          },
+          "value": "http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationTypeCode/stereoModel"
+        },
+        {
+          "label": {
+            "en": "Video",
+            "sv": "Video",
+            "de": "Video"
+          },
+          "description": {
+            "en": "Scene from a video recording."
+          },
+          "value": "http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationTypeCode/video"
+        }
+      ]
+    },
+    {
+      "type": "choice",
+      "nodetype": "URI",
+      "id": "geodcat:accrualPeriodicity-missing",
+      "property": "http://purl.org/dc/terms/accrualPeriodicity",
+      "pattern": "http://inspire.ec.europa.eu/metadata-codelist/MaintenanceFrequencyCode",
+      "label": {
+        "en": "Frequency of update (missing INSPIRE)"
+      },
+      "choices": [
+        {
+          "label": {
+            "en": "As needed",
+            "sv": "Vid behov",
+            "de": "Wie benötigt"
+          },
+          "value": "http://inspire.ec.europa.eu/metadata-codelist/MaintenanceFrequencyCode/asNeeded"
+        },
+        {
+          "label": {
+            "en": "Not planned",
+            "sv": "Inte planerat",
+            "de": "Nicht geplant"
+          },
+          "value": "http://inspire.ec.europa.eu/metadata-codelist/MaintenanceFrequencyCode/notPlanned"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "geodcat:conformity",
+      "property": "prov:wasUsedBy",
+      "constraints": {
+        "rdf:type": "prov:Activity"
+      },
+      "label": {
+        "en": "Conformity",
+        "sv": "Konformitet",
+        "de": "Konformität"
+      },
+      "items": [
+        {
+          "type": "group",
+          "nodetype": "RESOURCE",
+          "property": "prov:generated",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "styles": ["invisibleGroup"],
+          "items": [
+            "geodcat:dcterms:type-degreeOfConformity",
+            {
+              "type": "text",
+              "nodetype": "LANGUAGE_LITERAL",
+              "extends": "dcterms:description",
+              "label": {
+                "en": "Description",
+                "sv": "Beskrivning",
+                "de": "Beschreibung"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "nodetype": "RESOURCE",
+          "property": "prov:qualifiedAssociation",
+          "cardinality": {
+            "min": 1,
+            "max": 1
+          },
+          "styles": ["invisibleGroup"],
+          "items": [
+            {
+              "type": "group",
+              "nodetype": "RESOURCE",
+              "property": "prov:hadPlan",
+              "constraints": {
+                "rdf:type": "prov:Plan"
+              },
+              "styles": ["invisibleGroup"],
+              "cardinality": {
+                "min": 1,
+                "max": 1
+              },
+              "items": [
+                "geodcat:prov:wasDerivedFrom"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "choice",
+      "nodetype": "URI",
+      "id": "geodcat:prov:wasDerivedFrom",
+      "property": "prov:wasDerivedFrom",
+      "constraints": {
+        "rdf:type": "dcterms:Standard"
+      },
+      "label": {
+        "en": "Specification",
+        "sv": "Specifikation",
+        "de": "Spezifikation"
+      }
+    },
+    {
+      "type": "choice",
+      "nodetype": "PLAIN_LITERAL",
+      "id": "geodcat:cnt:characterEncoding",
+      "property": "cnt:characterEncoding",
+      "label": {
+        "en": "Character encoding",
+        "sv": "Teckenkodning",
+        "de": "Zeichenkodierung"
+      },
+      "choices": [
+        {"label": {"en": "ucs2"}, "description": { "en": "16-bit fixed size Universal Character Set, based on ISO/IEC 10646"}, "value": "ISO-10646-UCS-2"},
+        {"label": {"en": "ucs4"}, "description": { "en": "32-bit fixed size Universal Character Set, based on ISO/IEC 10646"}, "value": "ISO-10646-UCS-4"},
+        {"label": {"en": "utf7"}, "description": { "en": "7-bit variable size UCS Transfer Format, based on ISO/IEC 10646"}, "value": "UTF-7"},
+        {"label": {"en": "utf8"}, "description": { "en": "8-bit variable size UCS Transfer Format, based on ISO/IEC 10646"}, "value": "UTF-8"},
+        {"label": {"en": "utf16"}, "description": { "en": "16-bit variable size UCS Transfer Format, based on ISO/IEC 10646"}, "value": "UTF-16"},
+        {"label": {"en": "8859part1"}, "description": { "en": "ISO/IEC 8859-1, Information technology - 8-bit single byte coded graphic character sets - Part 1 : Latin alphabet No.1"}, "value": "ISO-8859-1"},
+        {"label": {"en": "8859part2"}, "description": { "en": "ISO/IEC 8859-2, Information technology - 8-bit single byte coded graphic character sets - Part 2 : Latin alphabet No.2"}, "value": "ISO-8859-2"},
+        {"label": {"en": "8859part3"}, "description": { "en": "ISO/IEC 8859-3, Information technology - 8-bit single byte coded graphic character sets - Part 3 : Latin alphabet No.3"}, "value": "ISO-8859-3"},
+        {"label": {"en": "8859part4"}, "description": { "en": "ISO/IEC 8859-4, Information technology - 8-bit single byte coded graphic character sets - Part 4 : Latin alphabet No.4"}, "value": "ISO-8859-4"},
+        {"label": {"en": "8859part5"}, "description": { "en": "ISO/IEC 8859-5, Information technology - 8-bit single byte coded graphic character sets - Part 5 : Latin/Cyrillic alphabet"}, "value": "ISO-8859-5"},
+        {"label": {"en": "8859part6"}, "description": { "en": "ISO/IEC 8859-6, Information technology - 8-bit single byte coded graphic character sets - Part 6 : Latin/Arabic alphabet"}, "value": "ISO-8859-6"},
+        {"label": {"en": "8859part7"}, "description": { "en": "ISO/IEC 8859-7, Information technology - 8-bit single byte coded graphic character sets - Part 7 : Latin/Greek alphabet"}, "value": "ISO-8859-7"},
+        {"label": {"en": "8859part8"}, "description": { "en": "ISO/IEC 8859-8, Information technology - 8-bit single byte coded graphic character sets - Part 8 : Latin/Hebrew alphabet"}, "value": "ISO-8859-8"},
+        {"label": {"en": "8859part9"}, "description": { "en": "ISO/IEC 8859-9, Information technology - 8-bit single byte coded graphic character sets - Part 9 : Latin alphabet No.5"}, "value": "ISO-8859-9"},
+        {"label": {"en": "8859part10"}, "description": { "en": "ISO/IEC 8859-10, Information technology - 8-bit single byte coded graphic character sets - Part 10 : Latin alphabet No.6"}, "value": "ISO-8859-10"},
+        {"label": {"en": "8859part11"}, "description": { "en": "ISO/IEC 8859-11, Information technology - 8-bit single byte coded graphic character sets - Part 11 : Latin/Thai alphabet"}, "value": "ISO-8859-11"},
+        {"label": {"en": "8859part13"}, "description": { "en": "ISO/IEC 8859-13, Information technology - 8-bit single byte coded graphic character sets - Part 13 : Latin alphabet No.7"}, "value": "ISO-8859-13"},
+        {"label": {"en": "8859part14"}, "description": { "en": "ISO/IEC 8859-14, Information technology - 8-bit single byte coded graphic character sets - Part 14 : Latin alphabet No.8 (Celtic)"}, "value": "ISO-8859-14"},
+        {"label": {"en": "8859part15"}, "description": { "en": "ISO/IEC 8859-15, Information technology - 8-bit single byte coded graphic character sets - Part 15 : Latin alphabet No.9"}, "value": "ISO-8859-15"},
+        {"label": {"en": "8859part16"}, "description": { "en": "ISO/IEC 8859-16, Information technology - 8-bit single byte coded graphic character sets - Part 16 : Latin alphabet No.10"}, "value": "ISO-8859-16"},
+        {"label": {"en": "jis"}, "description": { "en": "japanese code set used for electronic transmission"}, "value": "JIS_Encoding"},
+        {"label": {"en": "shiftJIS"}, "description": { "en": "japanese code set used on MS-DOS machines"}, "value": "Shift_JIS"},
+        {"label": {"en": "eucJP"}, "description": { "en": "japanese code set used on UNIX based machines"}, "value": "EUC-JP"},
+        {"label": {"en": "usAscii"}, "description": { "en": "United States ASCII code set (ISO 646 US)"}, "value": "US-ASCII"},
+        {"label": {"en": "ebcdic"}, "description": { "en": "IBM mainframe code set"}, "value": "IBM037"},
+        {"label": {"en": "eucKR"}, "description": { "en": "Korean code set"}, "value": "EUC-KR"},
+        {"label": {"en": "big5"}, "description": { "en": "traditional Chinese code set used in Taiwan, Hong Kong of China and other areas"}, "value": "Big5"},
+        {"label": {"en": "GB2312"}, "description": { "en": "simplified Chinese code set"}, "value": "GB2312"}
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,320 @@
+{
+  "templates": [
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "art:PieceOfArt",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://example.com/PieceOfArt"
+      },
+      "label": {
+        "en": "Piece of art"
+      },
+      "items": [
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "dcterms:title",
+          "cardinality": {
+            "min": 1,
+            "pref": 0
+          }
+        },
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "dcterms:description",
+          "cardinality": {
+            "min": 0,
+            "pref": 1
+          }
+        },
+        {
+          "type": "choice",
+          "nodetype": "URI",
+          "extends": "dcterms:subject",
+          "constraints": {
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2004/02/skos/core#Concept"
+          },
+          "label": {
+            "en": "Technique"
+          }
+        },
+        {
+          "type": "choice",
+          "nodetype": "URI",
+          "label": {
+            "en": "Artist"
+          },
+          "property": "http://example.com/artist",
+          "cardinality": {
+            "min": 1,
+            "pref": 0
+          },
+          "constraints": {
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://example.com/Artist"
+          }
+        },
+        {
+          "type": "choice",
+          "nodetype": "URI",
+          "extends": "foaf:img",
+          "label": {
+            "en": "Image"
+          },
+          "constraints": {
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://xmlns.com/foaf/0.1/Image"
+          }
+        },
+        {
+          "type": "choice",
+          "nodetype": "URI",
+          "label": {
+            "": "Document"
+          },
+          "constraints": {
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://xmlns.com/foaf/0.1/Document"
+          },
+          "property": "http://xmlns.com/foaf/0.1/page"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "art:Artist",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://example.com/Artist"
+      },
+      "items": [
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "cardinality": {
+            "min": 1,
+            "pref": 0
+          },
+          "extends": "foaf:givenName"
+        },
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "foaf:familyName"
+        },
+        {
+          "type": "choice",
+          "nodetype": "URI",
+          "property": "http://example.com/place",
+          "label": {
+            "en": "Place"
+          },
+          "constraints": {
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://example.com/Place"
+          }
+        },
+        {
+          "type": "choice",
+          "nodetype": "URI",
+          "label": {
+            "": "Document"
+          },
+          "constraints": {
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://xmlns.com/foaf/0.1/Document"
+          },
+          "property": "http://xmlns.com/foaf/0.1/page"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "art:Place",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://example.com/Place"
+      },
+      "extends": "vcard:Address",
+      "label": {
+        "": "Place"
+      },
+      "items": [
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "dcterms:title",
+          "cardinality": {
+            "min": 1,
+            "pref": 0
+          }
+        },
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "vc:street-address"
+        },
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "vc:locality"
+        },
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "vc:postal-code"
+        },
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "vc:country-name"
+        },
+        {
+          "type": "choice",
+          "nodetype": "URI",
+          "label": {
+            "en": "Same as"
+          },
+          "property": "http://www.w3.org/2002/07/owl#sameAs",
+          "constraints": {
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.geonames.org/ontology#Feature"
+          },
+          "cardinality": {
+            "min": 0,
+            "pref": 1
+          }
+        },
+        {
+          "type": "group",
+          "nodetype": "BLANK",
+          "constraints": {
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://purl.org/dc/terms/Location"
+          },
+          "property": "http://purl.org/dc/terms/spatial",
+          "label": {
+            "en": "Bounding box"
+          },
+          "items": [
+            {
+              "type": "text",
+              "nodetype": "DATATYPE_LITERAL",
+              "datatype": "http://www.opengis.net/ont/geosparql#wktLiteral",
+              "cardinality": {
+                "min": 0,
+                "pref": 1,
+                "max": 1
+              },
+              "property": "http://www.w3.org/ns/locn#geometry",
+              "styles": [
+                "invisibleGroup"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "art:Exhibition",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://example.com/Exhibition"
+      },
+      "label": {
+        "en": "Exhibition"
+      },
+      "items": [
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "dcterms:title",
+          "cardinality": {
+            "min": 1,
+            "pref": 0
+          }
+        },
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "dcterms:description",
+          "cardinality": {
+            "min": 0,
+            "pref": 1
+          }
+        },
+        {
+          "type": "choice",
+          "nodetype": "URI",
+          "label": {
+            "en": "Displays"
+          },
+          "constraints": {
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://example.com/PieceOfArt"
+          },
+          "property": "http://example.com/displays"
+        },
+        {
+          "type": "choice",
+          "nodetype": "URI",
+          "label": {
+            "": "Document"
+          },
+          "constraints": {
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://xmlns.com/foaf/0.1/Document"
+          },
+          "property": "http://xmlns.com/foaf/0.1/page"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "art:Image",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://xmlns.com/foaf/0.1/Image"
+      },
+      "label": {
+        "en": "Image"
+      },
+      "items": [
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "dcterms:title",
+          "cardinality": {
+            "min": 1,
+            "pref": 0
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "art:Document",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://xmlns.com/foaf/0.1/Document"
+      },
+      "label": {
+        "en": "Document"
+      },
+      "items": [
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "dcterms:title",
+          "cardinality": {
+            "min": 1,
+            "pref": 0
+          }
+        },
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "dcterms:description",
+          "cardinality": {
+            "min": 0,
+            "pref": 1
+          }
+        }
+      ]
+    }
+  ]
+}

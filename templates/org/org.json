@@ -1,0 +1,394 @@
+{
+  "templates": [
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "org:Organization",
+      "label": {
+        "en": "Organization"
+      },
+      "items": [
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "skos:prefLabel",
+          "label": {
+            "en": "Name"
+          },
+          "cardinality": {
+            "min": 1,
+            "pref": 0
+          }
+        },
+        {
+          "id": "org:subOrganizationOf"
+        },
+        {
+          "id": "org:classification"
+        },
+        {
+          "id": "role:purpose"
+        },
+        {
+          "id": "org:linkedTo"
+        },
+        {
+          "id": "org:siteRelation"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "org:Membership",
+      "label": {
+        "en": "Membership"
+      },
+      "items": [
+        {
+          "id": "org:role"
+        },
+        {
+          "id": "org:organization"
+        }
+      ],
+      "cardinality": {
+        "min": 0,
+        "pref": 0
+      },
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+          "http://www.w3.org/ns/org#Membership"
+        ]
+      }
+    },
+    {
+      "type": "choice",
+      "nodetype": "URI",
+      "id": "org:organization",
+      "property": "http://www.w3.org/ns/org#organization",
+      "label": {
+        "en": "In organization"
+      },
+      "cardinality": {
+        "min": 1,
+        "pref": 0,
+        "max": 1
+      },
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+          "http://www.w3.org/ns/org#Organization",
+          "http://www.w3.org/ns/org#OrganizationalUnit"
+        ]
+      }
+    },
+    {
+      "type": "choice",
+      "nodetype": "URI",
+      "id": "org:role",
+      "label": {
+        "en": "Role"
+      },
+      "property": "http://www.w3.org/ns/org#role",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2004/02/skos/core#Concept"
+      },
+      "cardinality": {
+        "min": 0,
+        "pref": 1
+      }
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "org:hasMembership",
+      "property": "http://www.w3.org/ns/org#hasMembership",
+      "label": {
+        "en": "Membership"
+      },
+      "extends": "org:Membership",
+      "cardinality": {
+        "min": 0,
+        "pref": 1
+      }
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "org:OrganizationalUnit",
+      "label": {
+        "en": "Organizational unit"
+      },
+      "extends": "org:Organization",
+      "items": [
+        {
+          "id": "org:unitOf"
+        }
+      ]
+    },
+    {
+      "type": "choice",
+      "nodetype": "URI",
+      "id": "org:unitOf",
+      "property": "http://www.w3.org/ns/org#unitOf",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+          "http://www.w3.org/ns/org#Organization",
+          "http://www.w3.org/ns/org#OrganizationalUnit"
+        ]
+      },
+      "label": {
+        "en": "Unit of"
+      }
+    },
+    {
+      "type": "choice",
+      "nodetype": "URI",
+      "id": "org:subOrganizationOf",
+      "property": "http://www.w3.org/ns/org#subOrganizationOf",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/ns/org#Organization"
+      },
+      "label": {
+        "en": "Sub organization of"
+      }
+    },
+    {
+      "type": "choice",
+      "nodetype": "URI",
+      "id": "org:classification",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2004/02/skos/core#Concept"
+      },
+      "label": {
+        "en": "Classification"
+      },
+      "property": "http://www.w3.org/ns/org#classification",
+      "cardinality": {
+        "min": 0,
+        "pref": 1
+      }
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "org:Post",
+      "label": {
+        "en": "Post"
+      },
+      "items": [
+        {
+          "id": "org:role"
+        },
+        {
+          "id": "org:postIn"
+        }
+      ],
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+          "http://www.w3.org/ns/org#Post"
+        ]
+      }
+    },
+    {
+      "type": "choice",
+      "nodetype": "URI",
+      "id": "org:heldBy",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://xmlns.com/foaf/0.1/foaf"
+      },
+      "property": "http://www.w3.org/ns/org#heldBy",
+      "cardinality": {
+        "min": 1,
+        "pref": 0,
+        "max": 1
+      },
+      "label": {
+        "": "Held by"
+      }
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "org:hasPost",
+      "extends": "org:Post",
+      "property": "http://www.w3.org/ns/org#hasPost"
+    },
+    {
+      "type": "choice",
+      "nodetype": "URI",
+      "id": "role:purpose",
+      "property": "http://www.w3.org/ns/org#purpose",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/2004/02/skos/core#Concept"
+      },
+      "label": {
+        "en": "Purpose"
+      }
+    },
+    {
+      "type": "choice",
+      "nodetype": "URI",
+      "id": "org:linkedTo",
+      "property": "http://www.w3.org/ns/org#linkedTo",
+      "label": {
+        "en": "Linked to"
+      },
+      "cardinality": {
+        "min": 0,
+        "pref": 0
+      },
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/ns/org#Organization"
+      }
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "org:Site",
+      "label": {
+        "en": "Site"
+      },
+      "items": [
+        {
+          "type": "text",
+          "nodetype": "LITERAL",
+          "extends": "skos:prefLabel",
+          "label": {
+            "en": "Name"
+          },
+          "cardinality": {
+            "min": 1,
+            "pref": 0
+          }
+        },
+        {
+          "type": "group",
+          "nodetype": "RESOURCE",
+          "constraints": {
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.w3.org/ns/org#Organization"
+          },
+          "property": "http://www.w3.org/ns/org#siteAddress",
+          "label": {
+            "en": "Address"
+          },
+          "extends": "vc:hasAddress",
+          "cardinality": {
+            "min": 0,
+            "pref": 1
+          }
+        }
+      ]
+    },
+    {
+      "type": "propertygroup",
+      "nodetype": "RESOURCE",
+      "id": "org:siteRelation",
+      "label": {
+        "en": "Place"
+      },
+      "items": [
+        {
+          "type": "choice",
+          "nodetype": "URI",
+          "label": {
+            "": "Type"
+          },
+          "choices": [
+            {
+              "value": "http://www.w3.org/ns/org#hasSite",
+              "label": {
+                "en": "Any"
+              }
+            },
+            {
+              "value": "http://www.w3.org/ns/org#hasPrimarySite",
+              "label": {
+                "en": "Primary"
+              }
+            },
+            {
+              "value": "http://www.w3.org/ns/org#hasRegisteredSite",
+              "label": {
+                "en": "Registered"
+              }
+            }
+          ],
+          "styles": [
+            "strictmatch"
+          ]
+        },
+        {
+          "type": "choice",
+          "nodetype": "URI",
+          "label": {
+            "en": "Site"
+          },
+          "constraints": {
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+              "http://www.w3.org/ns/org#Site"
+            ]
+          },
+          "labelProperties": [
+            "http://www.w3.org/2004/02/skos/core#prefLabel"
+          ]
+        }
+      ],
+      "cardinality": {
+        "min": 1,
+        "pref": 0
+      }
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "org:Person",
+      "label": {
+        "": "Person"
+      },
+      "extends": "foaf:Person-ref",
+      "items": [
+        {
+          "id": "org:hasMembership"
+        },
+        {
+          "id": "org:holds"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "nodetype": "RESOURCE",
+      "id": "org:holds",
+      "property": "http://www.w3.org/ns/org#holds",
+      "label": {
+        "en": "Holds"
+      },
+      "extends": "org:Post",
+      "cardinality": {
+        "min": 0,
+        "pref": 1
+      }
+    },
+    {
+      "type": "choice",
+      "nodetype": "URI",
+      "id": "org:postIn",
+      "property": "http://www.w3.org/ns/org#postIn",
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+          "http://www.w3.org/ns/org#Organization",
+          "http://www.w3.org/ns/org#OrganizationalUnit"
+        ]
+      },
+      "label": {
+        "en": "In organization"
+      },
+      "cardinality": {
+        "min": 1,
+        "pref": 0,
+        "max": 1
+      }
+    }
+  ]
+}

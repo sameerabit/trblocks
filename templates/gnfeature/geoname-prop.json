@@ -1,0 +1,162 @@
+{
+  "templates": [
+    {
+      "id": "cn_name",
+      "type":"text",
+      "label":{"en":"Name"},
+      "nodetype":"LITERAL",
+      "property":"http://www.geonames.org/ontology#name",
+      "description":{"en":"Country name"},
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.geonames.org/ontology#name"
+      },
+      "cardinality": {"min": 1, "pref": 1, "max": 1}
+    },
+    {
+      "id": "cn_officialname",
+      "type":"text",
+      "nodetype":"LANGUAGE_LITERAL",
+      "label":{"en":"Offical Name"},
+      "property":"http://www.geonames.org/ontology#officialName",
+      "description":{"en":"Country's official name"},
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.geonames.org/ontology#officialName"
+      },
+      "cardinality": {"min": 0, "pref": 1}
+    },
+    {
+      "id": "cn_alternateName",
+      "type":"text",
+      "nodetype":"LANGUAGE_LITERAL",
+      "label":{"en":"Alternate Name" },
+      "property":"http://www.geonames.org/ontology#alternateName",
+      "description":{"en":"Country's alternate name"},
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.geonames.org/ontology#alternateName"
+      },
+      "cardinality": {"min": 0, "pref": 1}
+    },
+    {
+      "id": "cn_featureclass",
+      "type": "choice",
+      "nodetype": "URI",
+      "label": { "en": "Feature Class" },
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.geonames.org/ontology#featureClass"
+      },
+      "cardinality": {"min": 0, "pref": 1},
+      "description":{"en":"... feature class"},
+      "property":"http://www.geonames.org/ontology#featureClass",
+      "choices": [
+        {
+          "value": "http://www.geonames.org/ontology#A",
+          "label": {
+            "en": "feature Class..."
+          },
+          "description": {
+            "en": "testingg .. "
+          }
+        },
+        {
+          "value": "http://www.geonames.org/ontology#A1",
+          "label": {
+            "en": "feature Class2.."
+          },
+          "description": {
+            "en": "testing gfg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cn_featurecode",
+      "type": "choice",
+      "nodetype": "URI",
+      "label": { "en": "Feature code" },
+      "cardinality": {"min": 0, "pref": 1},
+      "description":{"en":"... feature code"},
+      "choices": [
+        {
+          "value": "http://www.geonames.org/ontology#A.PCLI",
+          "label": {
+            "en": "feature code..."
+          },
+          "description": {
+            "en": "testing "
+          }
+        },
+        {
+          "value": "http://www.geonames.org/ontology#A.PCL",
+          "label": {
+            "en": "feature code1..."
+          },
+          "description": {
+            "en": "testing "
+          }
+        }
+      ],
+      "property":"http://www.geonames.org/ontology#featureCode"
+    },
+    {
+      "id": "cn_countrycode",
+      "type":"text",
+      "label":{"en":"Country Code" },
+      "nodetype":"LITERAL",
+      "property":"http://www.geonames.org/ontology#countryCode",
+      "description":{"en":"Country code"},
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.geonames.org/ontology#countryCode"
+      },
+      "cardinality": {"min": 0, "pref": 1},
+      "property": "http://www.geonames.org/ontology#countryCode"
+    },
+    {
+      "id": "cn_population",
+      "type":"text",
+      "label":{"en":"Population" },
+      "nodetype":"LITERAL",
+      "property":"http://www.geonames.org/ontology#population",
+      "description":{"en":"Country's population"},
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.geonames.org/ontology#population"
+      },
+      "cardinality": {"min": 0, "pref": 1}
+    },
+    {
+      "id": "cn_parentfeature",
+      "type":"choice",
+      "label":{"en":"Parent feature" },
+      "nodetype":"URI",
+      "property":"http://www.geonames.org/ontology#parentFeature",
+      "description":{"en":"..."},
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.geonames.org/ontology#Feature"
+      },
+      "cardinality": {"min": 0, "pref": 1, "max":1}
+    },
+    {
+      "id": "cn_locationmap",
+      "type":"text",
+      "label":{"en":"Location Map" },
+      "nodetype":"URI",
+      "description":{"en":"Country's location map"},
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.geonames.org/ontology#locationMap"
+      },
+      "cardinality": {"min": 0, "pref": 1, "max":1},
+      "property": "http://www.geonames.org/ontology#locationMap"
+    },
+    {
+      "id": "cn_wikipediaartictle",
+      "type":"text",
+      "label":{"en":"Wikipedia article" },
+      "nodetype":"URI",
+      "description":{"en":"Wikipedia article"},
+      "constraints": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": "http://www.geonames.org/ontology#wikipediaArticle"
+      },
+      "cardinality": {"min": 0, "pref": 1},
+      "property": "http://www.geonames.org/ontology#wikipediaArticle"
+    }
+  ]
+}

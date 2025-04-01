@@ -1,5 +1,0 @@
-{
-  "root": {
-    "fileUploadSizeLimit": "Uploaded file is too large. Current upload limit is set to ${limit} MB."
-  }
-}

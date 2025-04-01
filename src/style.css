@@ -1,0 +1,270 @@
+@import "fixes.css";
+@import "list/list.css";
+@import "search/search.css";
+@import "layout/layout.css";
+@import "modals/modal.css";
+@import "error/error.css";
+@import "graphics/map/openlayers/openLayerMap.css";
+/* --- RDForms different defaults --- */
+
+.entryscape .rdformsPresenter .rdformsField {
+    background: transparent;
+}
+
+/* --- Handlebars placeholder when div --- */
+.esbInlineDiv {
+    display: inline;
+}
+
+/* --- Slider block --- */
+.entryscape .slider-img {
+  width: 100%;
+}
+
+/* facets in filter-results block */
+.esbFilterResults {
+    display: flex;
+}
+
+/* Error code style */
+.entryscape-boot-error {
+    color: red;
+    text-decoration: underline;
+    overflow: hidden;
+}
+.entryscape-boot-error:hover {
+    color: darkred;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.popover-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.popover-body {
+    font-size: small;
+}
+
+.esbView dd {
+    line-break: anywhere;
+    -webkit-line-break: anywhere;
+}
+
+.esbTag {
+    padding: 3px 10px;
+    border: 1px solid lightgrey;
+    background: white;
+    margin-right: 5px;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    line-height: 1.2;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.esbBadge {
+    padding: 3px 10px;
+    margin-right: 5px;
+    line-height: 30px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    white-space: normal;
+}
+
+.esbIndent {
+    margin: 0px 15px;
+}
+
+.esbDescription {
+    white-space: pre-line;
+}
+
+/*-- Change in entryscape-commons so this is not needed --*/
+.entryscape .esbDescription {
+    max-width: 782px;
+}
+
+.entryList .entryName .esbDescription span {
+    word-break: normal;
+}
+.entryscape .entryList .entryName {
+    min-height: 35px;
+}
+
+/*-- Generic layout classes --*/
+
+.esbMain {
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.esb2Col {
+    display: flex;
+    max-width: 1200px;
+}
+
+.esb2Col__main {
+    min-width: 300px;
+    width: 100%;
+}
+
+.esb2Col__sidebar {
+    width: 300px;
+    margin-right: 20px;
+    box-shadow: 0px 3px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.fullWidthExpandButton .block_facet button.btn--facet {
+    width: 189px;
+    margin: 10px;
+    float: unset !important;
+}
+
+.cleanRDForms .rdformsPresenter .rdformsLabel {
+    border-bottom-style: hidden;
+}
+.cleanRDForms .rdformsLanguage {
+    display: none;
+}
+.cleanRDForms .rdformsLabel {
+    text-transform: uppercase;
+    color: #585757;
+}
+.cleanRDForms .rdformsUrl,
+.cleanRDForms .rdformsField>div {
+    font-weight: bold;
+}
+
+/* Expand functionality of eachprop */
+.entryscape .eachprop .eachprop__restseparator,
+.entryscape .eachprop .eachprop__rest,
+.entryscape .eachprop .eachprop__unexpandbutton {
+    display: none;
+}
+
+.entryscape .eachprop.eachprop--expanded .eachprop__restseparator,
+.entryscape .eachprop.eachprop--expanded .eachprop__rest,
+.entryscape .eachprop.eachprop--expanded .eachprop__unexpandbutton {
+    display: inline;
+}
+
+.entryscape .eachprop.eachprop--expanded .eachprop__ellipsis,
+.entryscape .eachprop.eachprop--expanded .eachprop__expandbutton {
+    display: none;
+}
+
+.entryscape .eachprop .eachprop__expandbutton,
+.entryscape .eachprop .eachprop__unexpandbutton {
+    margin-left: 10px;
+}
+
+
+.esbNormalButtonWidth {
+    min-width: 65px;
+    display: inline-block;
+}
+
+.esbRightFloater {
+    float: right;
+    background: white;
+    border-bottom-left-radius: 3px;
+    margin-left: 20px;
+}
+.esbPadding .esbRightFloater {
+    margin-top: -15px;
+    margin-right: -15px;
+}
+.esbLabel {
+    font-weight: normal;
+    color: black;
+    padding-right: 10px;
+}
+
+/* Indicator css */
+.esbIndicator {
+    margin-right: 15px;
+}
+.esbIndicatorLabel {
+    padding-left: 5px;
+    text-transform: lowercase;
+}
+
+/* tabs */
+.esbTabs__container {
+    height: 420px;
+}
+
+.esbTabs__content {
+    border-radius: 0.25rem;
+    border: solid 1px #e5e5e5;
+    padding: 0;
+    background-color: #ffffff;
+    max-height: 362px;
+    overflow-y: auto;
+}
+
+.esbTabs__tabList {
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button.esbTabs__button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-color: #c1c1c1;
+}
+
+.esbTabs__button[aria-expanded="true"] {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.esbTabs__button[aria-expanded="true"]:focus {
+    background-color: #ffffff;
+}
+
+/* icons */
+.esbIcon__fa {
+    padding-right: 0.3em;
+}
+
+img.esbIcon__img {
+    width: auto;
+    min-width: 1em;
+    height: 1em;
+    min-height: 1em;
+    vertical-align: text-top;
+    padding-right: 0.3em;
+}
+
+img.esbIcon__img:-moz-loading { /* Avoid alt text flashing in Firefox */
+    visibility: hidden;
+}
+
+img.esbIcon__img--gray { /* For standard look on tema icons */
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+/* loader */
+.esbLoader {
+    border: 16px solid lightgrey; /*#f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: esbSpin 2s linear infinite;
+    margin: auto;
+}
+
+@keyframes esbSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
