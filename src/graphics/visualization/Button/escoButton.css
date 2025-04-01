@@ -1,0 +1,11 @@
+.escoButton__icon {
+    margin-left: 5px;
+}
+
+.escoButton__icon--marginless {
+    margin-left: 0;
+}
+
+.escoButton__icon--red {
+    color: rgba(244, 67, 54, 1);
+}

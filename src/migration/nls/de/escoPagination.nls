@@ -1,0 +1,3 @@
+{
+  "paginationText": "${fromCount} - ${toCount} von ${totalCount}"
+}

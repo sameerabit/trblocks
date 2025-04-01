@@ -1,0 +1,314 @@
+/* New List rows */
+.esbRow {
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/*
+
+.esbRow.esbRowExpanded>.esbRowHead .esbDescription {
+    white-space: pre-line;
+    overflow: visible;
+}
+.esbRow>.esbRowHead .esbDescription {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ */
+
+
+.esbRowHead h2,
+.esbRowHead h3,
+.esbRowHead h4 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.esbRowExpanded .esbRowHead h2,
+.esbRowExpanded .esbRowHead h3,
+.esbRowExpanded .esbRowHead h4 {
+    white-space: normal;
+}
+
+.esbRowExpanded .esbRowHead {
+    max-height: none;
+}
+
+.esbRowHead {
+    display: flex;
+    min-height: 60px;
+    max-height: 80px;
+    overflow: hidden;
+}
+
+.esbRowHead.esbNotFocusable {
+    overflow: initial;
+}
+
+.esbRowMain.esbFocusable {
+    overflow: hidden;
+}
+
+.esbRowHead .esbRowMain {
+    width: 100%;
+}
+
+.entryscape .entryListRow a.esbRowLink {
+    color: inherit;
+}
+
+.entryscape .entryListRow a.esbRowLink:hover {
+    text-decoration: inherit;
+}
+
+.esbRowHead.esbDefaultExpandButton .esbRowMain {
+    width: calc(100% - 50px);
+}
+.esbRowHead .esbRowControl {
+    width: 47px;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+.esbRowHead .esbRowControl>button {
+    border: 1px transparent;
+    height: 32px;
+    width: 34px;
+    margin-top: 12px;
+    margin-right: 12px;
+}
+
+.esbRowHead .esbRowControl>button:hover {
+    background: white;
+    color: #005a9c;
+}
+
+.esbRowHead .esbRowControl>button:focus {
+    border: 1px solid #005a9c;
+    color: #005a9c;
+}
+
+.esbRowExpand {
+    background: #f7f7f7;
+}
+
+a.rdformsUrl {
+    color: black;
+}
+
+.esbPadding .esbRowExpand,
+.esbPadding .esbRowHead .esbRowMain {
+    padding: 15px;
+}
+
+.esbRowExpand h4 {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.esbRowExpand .escoList .entryList.regular > div {
+    background: white;
+    border-top: 1px solid #f7f7f7;
+}
+
+.esbRowExpand .escoList .entryList.regular > div:first-child {
+    border-top-width: 0px;
+}
+
+.esbRowHead>.label {
+    margin-right: 10px;
+}
+
+.esbRowHead>.float-right.btn {
+    margin-left: 10px;
+}
+
+.esbRowClickExpand>.esbRowHead {
+    cursor: pointer;
+}
+
+
+.entryList .vmiddle.entryControls {
+    vertical-align: top;
+}
+
+.entryList .entryRow .entryControls button {
+    visibility: visible;
+}
+
+/* --- List block, common card classes --- */
+.entryscape .cardList-body {
+    max-width: 400px;
+    box-shadow: 0px 1px 5px #555;
+    background-color: white !important;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+    margin: 10px;
+    display: inline-block;
+}
+.entryscape .cardList-header {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Clickable row - cardlist case */
+.entryscape .cardList-body {
+    border: 1px solid #e8e8e8;
+}
+
+.entryscape .cardList-body:hover,
+.entryscape .cardList-body:focus {
+    border: 1px solid darkgrey;
+}
+
+.entryscape .cardList-body.esbRowClickable:hover,
+.entryscape .cardList-body.esbRowClickable:focus {
+    border: 1px solid blue;
+}
+
+.entryscape .cardList-body.esbRowClickable>a {
+    display: inline-block;
+}
+
+/* Clickable row - regular case */
+.entryscape .esbRow.esbRowClickable .esbRowHead {
+    border: 1px solid transparent;
+}
+
+.entryscape .esbRow.esbRowClickable .esbRowHead:hover {
+    background: #f7f7f7;
+    color: #005a9c;
+}
+
+.entryscape .esbRow.esbRowClickable .esbRowHead:focus {
+    border: 1px solid #005a9c;
+    color: #005a9c;
+}
+
+/* End clickable row */
+
+.esb1Col .cardLayout>*>*>.entryList.regular  {
+    column-count: 1;
+    column-gap: 10px;
+    max-width: 1200px;
+}
+
+@media (min-width: 620px) {
+    .esb1Col .cardLayout>*>*>.entryList.regular {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 960px) {
+    .esb1Col .cardLayout>*>*>.entryList.regular {
+        column-count: 3;
+    }
+}
+
+.esb2Col .cardLayout>*>*>.entryList.regular  {
+    column-count: 1;
+    column-gap: 10px;
+    max-width: 880px;
+}
+
+@media (min-width: 920px) {
+    .esb2Col .cardLayout>*>*>.entryList.regular {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 1260px) {
+    .esb2Col .cardLayout>*>*>.entryList.regular {
+        column-count: 3;
+    }
+}
+
+/*  Specific css, needed? */
+.entryscape .cardList-title {
+    margin: 1em;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.entryscape .cardList-description {
+    margin: 1em;
+    margin-top: 0;
+    padding: .5rem;
+    line-height: 1.6em;
+}
+
+.entryscape .img-container {
+    max-width: 400px;
+}
+
+.entryscape img {
+    width: 100%;
+    max-height: 100%;
+}
+
+.esbRow.esbRowExpanded>.esbRowHead .esbDescription {
+    white-space: pre-line;
+    overflow: visible;
+}
+.esbRow>.esbRowHead .esbDescription {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Pagination */
+.entryscape .page-link:not(:disabled) {
+    color: #005a9c;
+}
+.entryscape .pagination .page-text {
+    min-width: 2.6em;
+    margin-right: 0.5em;
+    border-radius: 4em;
+}
+
+/* Override siteVision css for pagination */
+.entryscape .pagination a {
+    margin: 0;
+}
+
+.entryscape .pagination span {
+    margin-bottom: 0;
+}
+
+/* Row alignment */
+.esbRowAlign {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.esbRowAlignPrimary {
+    flex-grow: 1;
+}
+
+.esbRow.esbRowExpanded>.esbRowHead>.esbRowMain>.esbRowAlign>.esbRowEllipsis {
+    white-space: normal;
+    overflow: visible;
+}
+.esbRow>.esbRowHead .esbRowAlign>.esbRowEllipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.esbList__hidden {
+    visibility: hidden;
+}
+.esbSpinner {
+    visibility: visible;
+    position: absolute;
+    height: 260px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

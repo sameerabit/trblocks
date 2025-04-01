@@ -1,0 +1,168 @@
+.esbFilterResults__filter {
+    margin: 10px 10px 10px 0px;
+    padding: 2px;
+    min-width: 150px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    word-break: normal;
+    background-color: #efefef;
+    border-radius: 5px;
+}
+
+.esbFilterResults__removeButton:before,
+.esbFilterResults__removeButton {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\F00D";
+    border-style: none;
+    color: black;
+    background-color: transparent;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.esbFilterResults__group {
+    margin-left: 5px;
+}
+
+.esbFilterResults__label {
+    margin-left: 5px;
+}
+
+@media (min-width: 620px) {
+    .esbFilterResults__filter {
+        min-width: 100px;
+    }
+}
+
+
+/* --- MultiSearch css --- */
+
+.selectize-control.multi .selectize-input > button.item {
+    padding: 2px 6px !important; /* important needed because of important from commons */
+}
+
+.selectize-control.multi .selectize-input>button {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0 3px 3px 0;
+    padding: 1px 3px;
+    background: #efefef;
+    color: #333333;
+    border: 0 solid rgba(0,0,0,0);
+}
+
+div .selectize-control.multi .selectize-input .group {
+    padding-right: 8px;
+}
+
+div .selectize-control.multi .selectize-input .fa-times {
+    padding-left: 8px;
+}
+
+.esbSearchError,
+.esbSearchError.active {
+    border-width: 0;
+    color: red;
+    background: white;
+}
+
+.esbSearchErrorPresent .esbSearchError {
+    margin-top: 5px;
+}
+
+.esbSearchErrorNotPresent .esbSearchError {
+    display: none;
+}
+
+/* --- Pagination not visible per default --- */
+
+.multiplePages .entryPaginationFiller {
+    display: none !important;
+}
+
+/* --- Facet css --- */
+.entryscape .esbFacets__collection h3 {
+    /* width: 100%; */
+    /* padding: 5px 10px 0px; */
+    border-bottom: 1px solid #c4c4c4;
+    margin: 20px 5px 5px;
+    padding-bottom: 5px;
+}
+
+.entryscape .esbFacets__collection ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.entryscape .esbFacets__collection li {
+    line-height: 27px;
+    display: block;
+    padding: 2px 33px 2px 10px;
+    cursor: pointer;
+    position: relative;
+}
+.entryscape .esbFacets__optionLink {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: inherit;
+}
+
+.entryscape .esbFacets__option.esbFacets--selected {
+    background: #f7f7f7;
+    cursor: default;
+}
+
+.entryscape .esbFacets__option:hover {
+    background: #f7f7f7;
+    color: #005a9c;
+}
+
+.entryscape .esbFacets__clear {
+    position: absolute;
+    margin-right: 10px;
+    top: 0px;
+    right: 0px;
+    padding: 4px 10px;
+}
+
+.entryscape .esbFacets__clear:focus {
+    border: 1px solid blue;
+    color: #005a9c;
+}
+
+.entryscape .esbFacets__occurence {
+    margin-left: 6px;
+}
+
+.esbFacets__limit {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.entryscape .facetLabel {
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+/* sort and limit*/
+.esbSort input[type="select-one"], .esbLimit input[type="select-one"] {
+    caret-color: transparent;
+}
+
+/* searchFilter */
+.selectize-control.single {
+    margin-bottom: 7px; /* adjust to match previous version */
+}
+
+/* radio buttons */
+.esbRadioOption input.esbRadioButton {
+    margin-right: 7px;
+}

@@ -1,0 +1,59 @@
+.esbModalToggle:hover {
+    cursor: pointer;
+}
+button.esbModalCancel, button.esbModalSave, button.esbModalClose {
+    justify-self: end;
+    align-self: start;
+    margin-left: 1rem;
+}
+.esbModal--backDrop {
+    background-color: #00000080;
+    z-index: 10;
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.esbModal--container {
+    position: fixed;
+    z-index: 20;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    border-radius: 4px;
+    grid-template-columns: minmax(100px, 1fr);
+    padding: 0;
+    background-color: #fff;
+    min-width: 90vw;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+.esbModal--content div {
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+.esbModal--header, .esbModal--content, .esbModal--footer {
+    display: grid;
+    padding: 1.5rem;
+}
+.esbModal--header:empty {
+    display: none;
+}
+.esbModal--content {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.esbModal--footer {
+    grid-template-columns: 1fr auto;
+}
+esb-modal .esbModal--header h5 {
+    margin: 0;
+}
+@media (min-width: 920px) {
+    .esbModal--container {
+        min-width: 30vw;
+    }
+}

@@ -1,0 +1,19 @@
+.esbClickExpand {
+    cursor: pointer;
+}
+
+.esbExpanded .esbCollapsed {
+    display: none;
+}
+.esbCollapsed .esbExpanded {
+    display: none;
+}
+
+.entryscape .esbWideExpandButton.btn {
+    text-align: left;
+    width:100%
+}
+
+.esbWideExpandButton .fas {
+    margin-right: 10px;
+}

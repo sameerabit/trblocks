@@ -1,0 +1,51 @@
+.node {
+    cursor: pointer;
+}
+
+.overlay{
+    background-color:#EEE;
+}
+
+.esbHierarchy__node rect {
+    fill: #fff;
+    stroke: darkgray;
+    stroke-width: 1.5px;
+}
+
+.esbHierarchy__rootNode,
+.esbHierarchy__expandableNode {
+    cursor: pointer;
+}
+
+.esbHierarchy__rootNode rect {
+    stroke: darkred;
+}
+
+.esbHierarchy__expandableNode rect {
+    stroke: steelblue;
+}
+
+.node text {
+    font-size:10px;
+    font-family:sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+}
+
+.templink {
+    fill: none;
+    stroke: red;
+    stroke-width: 3px;
+}
+
+.ghostCircle.show{
+    display:block;
+}
+
+.ghostCircle, .activeDrag .ghostCircle{
+    display: none;
+}

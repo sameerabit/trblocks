@@ -1,0 +1,15 @@
+.modal .spaAsync .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.modal .spaAsync .info > div {
+    margin: 10px auto;
+}
+
+.modal .spaAsync .info .buttonRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
